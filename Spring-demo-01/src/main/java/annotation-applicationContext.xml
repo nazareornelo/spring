@@ -6,23 +6,11 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
+	<!-- add entry to enable component scanning -->
 
-	<!-- Define your beans here -->
-
-	<!-- define the dependency -->
-	<bean id="myFortuneService" class="com.spring.demo.HappyFortuneService">
-	</bean>
-
-	<bean id="myCoach" class="com.spring.demo.TrackCoach"
-        scope = "prototype" > 
-        
-		<!-- set up constructor injection -->
-		<constructor-arg ref="myFortuneService" />
-	</bean>
-
-
-	
-
+    <context:component-scan base-package="com.spring.annotation.demo"/>
+    <context:property-placeholder location="classpath:sport.properties"/> 
+    
 
 </beans>
 

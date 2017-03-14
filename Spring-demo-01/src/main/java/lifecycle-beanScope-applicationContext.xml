@@ -14,7 +14,7 @@
 	</bean>
 
 	<bean id="myCoach" class="com.spring.demo.TrackCoach"
-        scope = "prototype" > 
+         init-method="doMyStartupStuff" destroy-method="doMyCleanupStuff"> 
         
 		<!-- set up constructor injection -->
 		<constructor-arg ref="myFortuneService" />
